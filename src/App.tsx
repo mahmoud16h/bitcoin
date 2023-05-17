@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TickerComponent from "./components/ticker";
+import usePricesSocket from "./hooks/usePricesSocket";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { connected, connect, disconnect } = usePricesSocket();
+    return (
+        <div className="Ticker-Wrapper">
+            <div className={`Connection-Status ${connected ? 'blink' : ''}`} style={{backgroundColor: connected ? 'green' : 'red'}} />
+            <TickerComponent/>
+            <div className="Button-Wrapper">
+                <button className="Button" onClick={connect}>Open</button>
+                <button className="Button" onClick={disconnect}>Close</button>
+            </div>
+        </div>
+    );
 }
 
 export default App;
