@@ -39,7 +39,6 @@ export const pricesSlice = createSlice({
     },
 })
 
-// Action creators are generated for each case reducer function
 export const { setPricesForSymbol } = pricesSlice.actions
 
 export default pricesSlice.reducer
