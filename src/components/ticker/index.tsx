@@ -12,7 +12,7 @@ function TickerComponent() {
 
     return (
         <div>
-            <div>BTC/USD: {formatPrice(prices?.BTCEUR?.LAST_PRICE)}</div>
+            <div>BTC/USD: {formatPrice(prices?.BTCUSD?.LAST_PRICE)}</div>
             <div>BTC/EUR: {formatPrice(prices?.BTCEUR?.LAST_PRICE)}</div>
             <div>BTC/JPY: {formatPrice(prices?.BTCJPY?.LAST_PRICE)}</div>
             <div>BTC/GBP: {formatPrice(prices?.BTCGBP?.LAST_PRICE)}</div>
